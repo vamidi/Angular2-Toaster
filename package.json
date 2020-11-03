@@ -10,7 +10,7 @@
     "prebuild": "rimraf ./dist && npm run lint",
     "build": "node_modules/.bin/ngc -p ./tsconfig-aot.json && npm run rollup",
     "rollup": "node_modules/.bin/rollup -c ./config/rollup.config.js && npm run uglifyjs && npm run sass && npm run uglifycss && npm run copy",
-    "publish": "npm publish --access=public dist",
+    "publish": "npm publish dist --access=public",
     "uglifycss": "node_modules/.bin/uglifycss ./src/toaster.css > ./src/toaster.min.css",
     "uglifyjs": "node_modules/.bin/uglifyjs ./dist/bundles/angular2-toaster.umd.js -o ./dist/bundles/angular2-toaster.umd.min.js",
     "sass": "node_modules/.bin/node-sass --output-style=expanded src/toaster.scss src/toaster.css",
