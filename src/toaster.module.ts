@@ -16,14 +16,14 @@ import { ToasterService } from './toaster.service';
     ]
 })
 export class ToasterModule {
-    static forRoot(): ModuleWithProviders {
+    static forRoot(): ModuleWithProviders<ToasterModule> {
         return {
             ngModule: ToasterModule,
             providers: [ToasterService, ToasterContainerComponent]
         }
     }
 
-    static forChild(): ModuleWithProviders {
+    static forChild(): ModuleWithProviders<ToasterModule> {
         return {
             ngModule: ToasterModule,
             providers: [ToasterContainerComponent]
